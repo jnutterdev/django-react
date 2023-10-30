@@ -1,7 +1,7 @@
 {
   "name": "django-react",
   "version": "1.0.0",
-  "description": "a django react appnpm ",
+  "description": "An app created with django and react",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,8 +9,8 @@
     "build": "esbuild frontend/src/index.js --bundle --outfile=frontend/static/Bundle.js --loader:.js=jsx --format=cjs",
     "start": "esbuild frontend/src/index.js --bundle --outfile=frontend/static/Bundle.js --loader:.js=jsx --format=cjs --watch"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["django", "react", "esbuild"],
+  "author": "John Nutter",
   "license": "ISC",
   "dependencies": {
     "esbuild": "^0.19.5",
