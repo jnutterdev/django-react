@@ -2381,9 +2381,9 @@ var require_react_dom_development = __commonJS({
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
         }
-        var React3 = require_react();
+        var React4 = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -3988,7 +3988,7 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (typeof props.children === "object" && props.children !== null) {
-                React3.Children.forEach(props.children, function(child) {
+                React4.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -12435,7 +12435,7 @@ var require_react_dom_development = __commonJS({
           }
         }
         var fakeInternalInstance = {};
-        var emptyRefsObject = new React3.Component().refs;
+        var emptyRefsObject = new React4.Component().refs;
         var didWarnAboutStateAssignmentForComponent;
         var didWarnAboutUninitializedState;
         var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23507,19 +23507,28 @@ var require_client = __commonJS({
 });
 
 // frontend/src/index.js
-var import_react2 = __toESM(require_react());
-var import_client = __toESM(require_client());
+var import_react3 = __toESM(require_react(), 1);
+var import_client = __toESM(require_client(), 1);
 
 // frontend/src/App.js
-var import_react = __toESM(require_react());
+var import_react2 = __toESM(require_react(), 1);
+
+// frontend/src/components/Hero.js
+var import_react = __toESM(require_react(), 1);
+var Hero = () => {
+  return /* @__PURE__ */ import_react.default.createElement("section", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "hero" }, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h1", null, "My hero")), /* @__PURE__ */ import_react.default.createElement("p", null, "A new section"), /* @__PURE__ */ import_react.default.createElement("p", null, "Another new section")));
+};
+var Hero_default = Hero;
+
+// frontend/src/App.js
 var App = () => {
-  return /* @__PURE__ */ import_react.default.createElement("div", null, "Hello, World!");
+  return /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement(Hero_default, null));
 };
 var App_default = App;
 
 // frontend/src/index.js
 var root = (0, import_client.createRoot)(document.getElementById("app"));
-root.render(/* @__PURE__ */ import_react2.default.createElement(App_default, null));
+root.render(/* @__PURE__ */ import_react3.default.createElement(App_default, null));
 /*! Bundled license information:
 
 react/cjs/react.development.js:

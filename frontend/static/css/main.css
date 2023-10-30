@@ -1,0 +1,11 @@
+:root {
+    --bg-primary: purple;
+    --main-color: #fff;
+}
+
+.hero {
+    background-color: var(--bg-primary);
+    color: var(--main-color);
+    height: 20vh;
+    width: 100%;
+}

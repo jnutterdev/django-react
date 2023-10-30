@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "a django react appnpm ",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild frontend/src/index.js --bundle --outfile=frontend/static/Bundle.js --loader:.js=jsx --format=cjs"
+    "build": "esbuild frontend/src/index.js --bundle --outfile=frontend/static/Bundle.js --loader:.js=jsx --format=cjs",
+    "start": "esbuild frontend/src/index.js --bundle --outfile=frontend/static/Bundle.js --loader:.js=jsx --format=cjs --watch"
   },
   "keywords": [],
   "author": "",
