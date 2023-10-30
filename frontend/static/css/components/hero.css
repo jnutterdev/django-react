@@ -1,0 +1,21 @@
+
+.hero-image {
+    background: url('../../img/lines-light.jpg') center center/cover;
+    color: var(--main-color);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .hero-text h1 {
+    font-size: 44px
+  }

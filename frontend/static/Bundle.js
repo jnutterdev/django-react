@@ -23516,7 +23516,7 @@ var import_react2 = __toESM(require_react(), 1);
 // frontend/src/components/Hero.js
 var import_react = __toESM(require_react(), 1);
 var Hero = () => {
-  return /* @__PURE__ */ import_react.default.createElement("section", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "hero" }, /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h1", null, "My hero")), /* @__PURE__ */ import_react.default.createElement("p", null, "A new section"), /* @__PURE__ */ import_react.default.createElement("p", null, "Another new section")));
+  return /* @__PURE__ */ import_react.default.createElement("section", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "hero-image" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "hero-text" }, /* @__PURE__ */ import_react.default.createElement("h1", null, "I am John Nutter"), /* @__PURE__ */ import_react.default.createElement("p", null, "I'm a fullstack developer"))));
 };
 var Hero_default = Hero;
 
