@@ -1,6 +1,6 @@
 
 .hero-image {
-    background: url('../../img/lines-light.jpg') center center/cover;
+    /* background: url('../../img/lines-light.jpg') center center/cover; */
     color: var(--main-color);
     height: 100vh;
     width: 100%;

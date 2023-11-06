@@ -1083,7 +1083,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context);
         }
-        function useState(initialState) {
+        function useState3(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
@@ -1095,7 +1095,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect(create, deps) {
+        function useEffect2(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
@@ -1877,7 +1877,7 @@ var require_react_development = __commonJS({
         exports.useContext = useContext;
         exports.useDebugValue = useDebugValue;
         exports.useDeferredValue = useDeferredValue;
-        exports.useEffect = useEffect;
+        exports.useEffect = useEffect2;
         exports.useId = useId;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useInsertionEffect = useInsertionEffect;
@@ -1885,7 +1885,7 @@ var require_react_development = __commonJS({
         exports.useMemo = useMemo;
         exports.useReducer = useReducer;
         exports.useRef = useRef;
-        exports.useState = useState;
+        exports.useState = useState3;
         exports.useSyncExternalStore = useSyncExternalStore;
         exports.useTransition = useTransition;
         exports.version = ReactVersion;
@@ -2381,9 +2381,9 @@ var require_react_dom_development = __commonJS({
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
         }
-        var React4 = require_react();
+        var React8 = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -3988,7 +3988,7 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (typeof props.children === "object" && props.children !== null) {
-                React4.Children.forEach(props.children, function(child) {
+                React8.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -12435,7 +12435,7 @@ var require_react_dom_development = __commonJS({
           }
         }
         var fakeInternalInstance = {};
-        var emptyRefsObject = new React4.Component().refs;
+        var emptyRefsObject = new React8.Component().refs;
         var didWarnAboutStateAssignmentForComponent;
         var didWarnAboutUninitializedState;
         var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -23507,28 +23507,145 @@ var require_client = __commonJS({
 });
 
 // frontend/src/index.js
-var import_react3 = __toESM(require_react(), 1);
+var import_react7 = __toESM(require_react(), 1);
 var import_client = __toESM(require_client(), 1);
 
-// frontend/src/App.js
-var import_react2 = __toESM(require_react(), 1);
+// frontend/src/App.jsx
+var import_react6 = __toESM(require_react(), 1);
 
-// frontend/src/components/Hero.js
+// frontend/src/components/Hero.jsx
 var import_react = __toESM(require_react(), 1);
-var Hero = () => {
-  return /* @__PURE__ */ import_react.default.createElement("section", null, /* @__PURE__ */ import_react.default.createElement("div", { className: "hero-image" }, /* @__PURE__ */ import_react.default.createElement("div", { className: "hero-text" }, /* @__PURE__ */ import_react.default.createElement("h1", null, "I am John Nutter"), /* @__PURE__ */ import_react.default.createElement("p", null, "I'm a fullstack developer"))));
-};
-var Hero_default = Hero;
 
-// frontend/src/App.js
+// frontend/src/components/Modal.jsx
+var import_react4 = __toESM(require_react(), 1);
+
+// node_modules/react-icons/lib/esm/iconBase.js
+var import_react3 = __toESM(require_react());
+
+// node_modules/react-icons/lib/esm/iconContext.js
+var import_react2 = __toESM(require_react());
+var DefaultContext = {
+  color: void 0,
+  size: void 0,
+  className: void 0,
+  style: void 0,
+  attr: void 0
+};
+var IconContext = import_react2.default.createContext && import_react2.default.createContext(DefaultContext);
+
+// node_modules/react-icons/lib/esm/iconBase.js
+var __assign = function() {
+  __assign = Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s)
+        if (Object.prototype.hasOwnProperty.call(s, p))
+          t[p] = s[p];
+    }
+    return t;
+  };
+  return __assign.apply(this, arguments);
+};
+var __rest = function(s, e) {
+  var t = {};
+  for (var p in s)
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+      t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function")
+    for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+      if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+        t[p[i]] = s[p[i]];
+    }
+  return t;
+};
+function Tree2Element(tree) {
+  return tree && tree.map(function(node, i) {
+    return import_react3.default.createElement(node.tag, __assign({
+      key: i
+    }, node.attr), Tree2Element(node.child));
+  });
+}
+function GenIcon(data) {
+  return function(props) {
+    return import_react3.default.createElement(IconBase, __assign({
+      attr: __assign({}, data.attr)
+    }, props), Tree2Element(data.child));
+  };
+}
+function IconBase(props) {
+  var elem = function(conf) {
+    var attr = props.attr, size = props.size, title = props.title, svgProps = __rest(props, ["attr", "size", "title"]);
+    var computedSize = size || conf.size || "1em";
+    var className;
+    if (conf.className)
+      className = conf.className;
+    if (props.className)
+      className = (className ? className + " " : "") + props.className;
+    return import_react3.default.createElement("svg", __assign({
+      stroke: "currentColor",
+      fill: "currentColor",
+      strokeWidth: "0"
+    }, conf.attr, attr, svgProps, {
+      className,
+      style: __assign(__assign({
+        color: props.color || conf.color
+      }, conf.style), props.style),
+      height: computedSize,
+      width: computedSize,
+      xmlns: "http://www.w3.org/2000/svg"
+    }), title && import_react3.default.createElement("title", null, title), props.children);
+  };
+  return IconContext !== void 0 ? import_react3.default.createElement(IconContext.Consumer, null, function(conf) {
+    return elem(conf);
+  }) : elem(DefaultContext);
+}
+
+// node_modules/react-icons/ri/index.esm.js
+function RiCloseLine(props) {
+  return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "d": "M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z" } }] })(props);
+}
+
+// frontend/src/components/Modal.jsx
+var Modal = ({ setIsOpen }) => {
+  return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, /* @__PURE__ */ import_react4.default.createElement("div", { className: "darkBG", onClick: () => setIsOpen(false) }), /* @__PURE__ */ import_react4.default.createElement("div", { className: "centered" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "modal" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "modalHeader" }, /* @__PURE__ */ import_react4.default.createElement("h5", { className: "heading" }, "Dialog")), /* @__PURE__ */ import_react4.default.createElement("button", { className: "closeBtn", onClick: () => setIsOpen(false) }, /* @__PURE__ */ import_react4.default.createElement(RiCloseLine, { style: { marginBottom: "-3px" } })), /* @__PURE__ */ import_react4.default.createElement("div", { className: "modalContent" }, "Are you sure you want to delete the item?"), /* @__PURE__ */ import_react4.default.createElement("div", { className: "modalActions" }, /* @__PURE__ */ import_react4.default.createElement("div", { className: "actionsContainer" }, /* @__PURE__ */ import_react4.default.createElement("button", { className: "deleteBtn", onClick: () => setIsOpen(false) }, "Delete"), /* @__PURE__ */ import_react4.default.createElement(
+    "button",
+    {
+      className: "cancelBtn",
+      onClick: () => setIsOpen(false)
+    },
+    "Cancel"
+  ))))));
+};
+var Modal_default = Modal;
+
+// frontend/src/components/Cards.jsx
+var import_react5 = __toESM(require_react(), 1);
+var Cards = () => {
+  const [posts, setPosts] = (0, import_react5.useState)([]);
+  const fetchData = () => {
+    fetch("api/posts").then((response) => {
+      return response.json();
+    }).then((data) => {
+      setPosts(data);
+    });
+  };
+  (0, import_react5.useEffect)(() => {
+    fetchData();
+  }, []);
+  return /* @__PURE__ */ import_react5.default.createElement("section", null, posts.length > 0 && /* @__PURE__ */ import_react5.default.createElement("ul", null, posts.map((post) => /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, /* @__PURE__ */ import_react5.default.createElement("li", { key: post.id }, post.title), /* @__PURE__ */ import_react5.default.createElement("p", null, post.content)))));
+};
+var Cards_default = Cards;
+
+// frontend/src/App.jsx
 var App = () => {
-  return /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement(Hero_default, null));
+  const [isOpen, setIsOpen] = (0, import_react6.useState)(false);
+  return /* @__PURE__ */ import_react6.default.createElement("div", { id: "app" }, /* @__PURE__ */ import_react6.default.createElement("main", null, /* @__PURE__ */ import_react6.default.createElement("button", { className: "primaryBtn", onClick: () => setIsOpen(true) }, "Open Modal"), isOpen && /* @__PURE__ */ import_react6.default.createElement(Modal_default, { setIsOpen }), /* @__PURE__ */ import_react6.default.createElement(Cards_default, null)));
 };
 var App_default = App;
 
 // frontend/src/index.js
 var root = (0, import_client.createRoot)(document.getElementById("app"));
-root.render(/* @__PURE__ */ import_react3.default.createElement(App_default, null));
+root.render(/* @__PURE__ */ import_react7.default.createElement(App_default, null));
 /*! Bundled license information:
 
 react/cjs/react.development.js:

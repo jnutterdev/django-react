@@ -9,12 +9,17 @@
     "build": "esbuild frontend/src/index.js --bundle --outfile=frontend/static/Bundle.js --loader:.js=jsx --format=cjs",
     "start": "esbuild frontend/src/index.js --bundle --outfile=frontend/static/Bundle.js --loader:.js=jsx --format=cjs --watch"
   },
-  "keywords": ["django", "react", "esbuild"],
+  "keywords": [
+    "django",
+    "react",
+    "esbuild"
+  ],
   "author": "John Nutter",
   "license": "ISC",
   "dependencies": {
     "esbuild": "^0.19.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0"
   }
 }
